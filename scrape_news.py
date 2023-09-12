@@ -1,27 +1,42 @@
 import requests
 from bs4 import BeautifulSoup
-from googlesearch import search
+from sumy.parsers.plaintext import PlaintextParser
+from sumy.nlp.tokenizers import Tokenizer
+from sumy.summarizers.lex_rank import LexRankSummarizer
 
-query = "world news"
+def generate_summary(text, sentences, language = "english"):
+    summarizer = LexRankSummarizer()
+    parser = PlaintextParser.from_string(text, Tokenizer(language))
+    summary_sentences = summarizer(parser.document, sentences)
+    summary = " ".join([str(sentence) for sentence in summary_sentences])
+    return summary
 
-search_params = {
-    "query": query,
-    "stop": 10,   
-    "pause": 1,  
-}
+class news_article:
+    def __init__(self, link, title, content_summary):
+        self.link = link
+        self.title = title
+        self.content_summary = content_summary
 
-search_results = search(**search_params)
+google_news = "https://news.google.com/topics/CAAqKggKIiRDQkFTRlFvSUwyMHZNRGx1YlY4U0JXVnVMVWRDR2dKRFFTZ0FQAQ?hl=en-CA&gl=CA&ceid=CA%3Aen"
 
-news_data = []
+req = requests.get(google_news)
+soup = BeautifulSoup(req.text, "html.parser")
 
-for result in search_results:
+news_articles = []
+article_links = []
 
-    try:
-        response = requests.get(result)
+for url in soup.find_all("a"):
+    href = url.get("href")
+    if href and href.startswith("./articles/"):
+        link = href.strip()
+        article_links.append("https://news.google.com" + link[1:]);
 
-        soup = BeautifulSoup(response.text, 'html.parser')
-
-        print(f"URL: {result}")
-
-    except Exception as e:
-        print(f"Error scraping {result}: {str(e)}")
+for link in article_links[:5]:
+    article_req = requests.get(link)
+    article_soup = BeautifulSoup(article_req.text, "html.parser")
+    title = article_soup.find('title')
+    paragraphs = article_soup.find_all('p')
+    content = " ".join([p.get_text() for p in paragraphs])  
+    summary = generate_summary(content, 5)
+    article = news_article(link, title.string, summary)
+    news_articles.append(article)
