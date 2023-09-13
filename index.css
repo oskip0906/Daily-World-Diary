@@ -1,0 +1,9 @@
+body {
+    background: linear-gradient(90deg, rgb(163, 163, 223) 30%, rgb(171, 171, 196) 70%);
+}
+
+#diary {
+    font-family: 'Courier New', Courier, monospace;
+    max-width: 90%;
+    margin: auto;
+}
