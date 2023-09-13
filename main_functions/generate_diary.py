@@ -1,8 +1,13 @@
+import os 
 import openai
 import scrape_google_news 
 import datetime
+from dotenv import load_dotenv, dotenv_values
 
-openai.api_key = "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"
+load_dotenv()
+
+
+openai.api_key = os.getenv("secret_api_key")
 
 
 def process_articles(news_articles):
