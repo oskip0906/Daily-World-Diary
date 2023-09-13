@@ -29,7 +29,7 @@ def generate():
 
     output = completion.choices[0].message.content
 
-    output += "\n\nSources:"
+    output += "\n\nSources (not all might have been used):"
 
     for article in scraped_articles:
         output += "\n" + f'<a href="{article.link}" target="_blank">{article.title}</a>'
