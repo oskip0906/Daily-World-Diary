@@ -1,4 +1,4 @@
-# How to run the code yourself (generate a new diary)
+# How to run the code (generate a new diary)
 
 1) Log in to https://platform.openai.com/ and get your ChatGPT API key 
 2) Create a file called ".env" in the "main_functions" folder with the following line: "secret_api_key = 'YOUR CHATGPT API KEY'"
