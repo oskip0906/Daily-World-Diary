@@ -11,6 +11,7 @@ async function fetchFileContent(file) {
     return text;
 }
 
+
 async function insertFileContent() {
     const diary = document.getElementById('diary');
     const text = await fetchFileContent(file); 

@@ -4,10 +4,11 @@ import scrape_google_news
 import datetime
 from dotenv import load_dotenv, dotenv_values
 
+
 load_dotenv()
 
-
 openai.api_key = os.getenv("secret_api_key")
+chatgpt_model = os.getenv("chatgpt_model")
 
 
 def process_articles(news_articles):
@@ -28,7 +29,7 @@ def generate():
     prompt = setup + process_articles(scraped_articles)
 
     completion = openai.ChatCompletion.create(
-        model = "gpt-3.5-turbo",
+        model = chatgpt_model,
         messages = [{"role": "user", "content": prompt}]
     )
 

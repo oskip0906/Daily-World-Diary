@@ -6,4 +6,9 @@ body {
     font-family: 'Courier New', Courier, monospace;
     max-width: 90%;
     margin: auto;
+    margin-bottom: 69px;
+}
+
+form {
+    text-align: center;
 }
