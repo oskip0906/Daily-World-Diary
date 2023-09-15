@@ -2,6 +2,10 @@ body {
     background: linear-gradient(90deg, rgb(163, 163, 223) 30%, rgb(171, 171, 196) 70%);
 }
 
+body p {
+    font-size: 20px;
+}
+
 #diary {
     font-family: 'Courier New', Courier, monospace;
     max-width: 90%;
@@ -11,4 +15,32 @@ body {
 
 form {
     text-align: center;
+    padding: 20px;
+}
+
+input {
+    background-color: rgba(255, 255, 255, 0.1); 
+    border: 1px solid black;
+    height: 20px;
+    width: 200px;
+}
+
+button {
+    background-color: rgba(255, 255, 255, 0.2); 
+    border: 1px solid black;
+    font-size: 15px;
+    padding: 5px;
+}
+
+button:hover {
+    background-color: rgb(27, 181, 219); 
+}
+
+#dateContainer {
+    margin: auto;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 25px;
 }

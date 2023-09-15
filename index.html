@@ -17,14 +17,16 @@
 
 <body>
 
-    <div id = "diary"></div>
+    <div id = "dateContainer"></div>
 
     <form>
-        <label for="date"></label>
-        <input type="text" id="date" name="date" required>
-        <br>
-        <input type="button" value="Process" onclick="processString()">
+        <p>Please enter a date in this format: (yyyy-mm-dd)</p>
+        <input type = "text" id = "date" required>
+        <br><br>
+        <button onclick="processDate()" id="loadButton">Load Diary</button>
     </form>
+
+    <div id = "diary"></div>
 
 </body>
 
