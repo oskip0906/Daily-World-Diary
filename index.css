@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(90deg, rgb(163, 163, 223) 30%, rgb(171, 171, 196) 70%);
+    background: linear-gradient(90deg, rgb(179, 179, 231) 30%, rgb(194, 194, 218) 70%);
 }
 
 body p {
@@ -30,6 +30,8 @@ button {
     border: 1px solid black;
     font-size: 15px;
     padding: 5px;
+    color: darkblue;
+    border-radius: 5%;
 }
 
 button:hover {
@@ -40,7 +42,7 @@ button:hover {
     margin: auto;
     text-align: center;
     margin-top: 50px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     font-weight: bold;
     font-size: 25px;
 }
