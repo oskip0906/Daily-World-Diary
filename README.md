@@ -1,8 +1,20 @@
-# How to run the code (generate a new diary)
+# How to Generate a New Diary
 
-1) Log in to https://platform.openai.com/ and get your ChatGPT API key 
-2) Create a file called ".env" in the "main_functions" folder with the following lines:
-   <br>"secret_api_key = 'YOUR CHATGPT API KEY'"
-   <br>"chatgpt_model = 'YOUR DESIRED CHATGPT MODEL'"
-4) Navigate to the Python file called "generate_diary.py" and run it.
-5) The new diary should appear as a text file with today's date as its name in the "daily_diaries" folder.
+1. **Log In to OpenAI Platform:**
+   - Visit the [OpenAI Platform](https://platform.openai.com/) and acquire a ChatGPT API key.
+     
+2. **Set Up Environment Variables:**
+
+   - Create a file named `.env` in the `main_functions` folder with the following lines:
+  
+     ```env
+     secret_api_key = 'YOUR_CHATGPT_API_KEY'
+     chatgpt_model = 'YOUR_DESIRED_CHATGPT_MODEL'
+     ```
+     
+4. **Run the Diary Generation Script:**
+   - Navigate to the Python file named `generate_diary.py`.
+   - Execute the script.
+   
+5. **Locate Your New Diary:**
+   - The newly generated diary will be saved as a text file with today's date as its name in the `daily_diaries` folder.
