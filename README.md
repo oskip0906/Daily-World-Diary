@@ -16,5 +16,5 @@
    - Navigate to the Python file named `generate_diary.py` and execute the program. 
    
 4. **Locate Your New Diary:**
-   - The newly generated diary will be saved as a txt file with today's date as its name in the `daily_diaries` folder.
+   - The new diary will be saved as a text file with today's date as its name in the `daily_diaries` folder.
    - Launch the webpage at `index.html` to view it. 
