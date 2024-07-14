@@ -31,19 +31,22 @@ def scrape():
     soup = BeautifulSoup(req.text, "html.parser")
 
     news_articles = []
-    article_links = []
+    article_links = set()
 
     for url in soup.find_all("a"):
         href = url.get("href")
         if href and href.startswith("./articles/"):
             link = href.strip()
-            article_links.append("https://news.google.com" + link[1:])
+            article_links.add("https://news.google.com" + link[1:])
 
     for link in article_links:
+
         if (num_articles == 5):
             break;
+        
         article_req = requests.get(link)
         article_soup = BeautifulSoup(article_req.text, "html.parser")
+
         if (article_soup.find('title') and article_soup.find_all('p')):
             title = article_soup.title.string
             paragraphs = article_soup.find_all('p')
