@@ -12,9 +12,9 @@
      chatgpt_model = 'YOUR_DESIRED_CHATGPT_MODEL'
      ```
      
-4. **Run the Diary Generation Script:**
-   - Navigate to the Python file named `generate_diary.py`.
-   - Execute the script.
+3. **Run the Diary Generation Script:**
+   - Navigate to the Python file named `generate_diary.py` and execute the program. 
    
-5. **Locate Your New Diary:**
+4. **Locate Your New Diary:**
    - The newly generated diary will be saved as a text file with today's date as its name in the `daily_diaries` folder.
+   - Launch the webpage at `index.html` to view it. 
